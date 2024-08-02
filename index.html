@@ -226,9 +226,8 @@
     </div> -->
       <!-- <div class="box m-5"> -->
         <div class="content has-text-centered">
-          <img src="static/images/overview_mmtbench.png" alt="MMT-bench" width="100%"/>
-          <p> Visualization of MMT-Bench. Our MMT-Bench consists of 32 meta-tasks (middle ring) which are decomposed into 162 subtasks (outer ring). For each meta-task, we denote the number of subtasks in it and illustrate one example of the pair of the image
-            and the question. MMT-Bench can be comprehensive enough to evaluate the multitask performance of LVLMs.</p>
+          <img src="static/images/MMeval_plot.png" alt="MMIU" width="100%"/>
+          <p>Visualization of MMIU. Our MMIU contains 77,659 images, 7 types of image relationships, and 5 image modalities, along with 11,698 multiple-choice questions, providing a comprehensive evaluation for 52 multi-image understanding tasks. Each example comes from a task chosen from each multi-image relationship. We construct MMIU by adopting a top-down hierarchy where image relationships of interest are enumerated and multiple tasks are associated with each relationship. The number of tasks for each relationship is demoted.</p>
         </div>
       <!-- </div> -->
     </div>
@@ -243,16 +242,13 @@
         <h2 class="title is-3">🔔News</h2>
         <div class="content has-text-justified">
           <p>
-            <b>🔥[2024-04-26]: We release our code! Stay tuned!</b>
-          </p>
-          <p>
-            <b>🔥[2024-04-25]: We release our paper! Stay tuned!</b>
+            <b>🔥[2024-08-02] Stay tuned!</b>
           </p>
       </div>      
         <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
           <p>
-            We present MMT-Bench, a comprehensive benchmark designed to assess LVLMs across massive multimodal tasks requiring expert knowledge and deliberate visual recognition, localization, reasoning, and planning. MMT-Bench comprises <b>31,325</b> meticulously curated multi-choice visual questions from various multimodal scenarios such as vehicle driving and embodied navigation, covering <b>32</b> core meta-tasks and <b>162</b> subtasks in multimodal understanding. Due to its extensive task coverage, MMT-Bench enables the evaluation of LVLMs using a task map, facilitating the discovery of in- and out-of-domain tasks. Evaluation results involving <b>30</b> LVLMs such as the proprietary GPT-4V, GeminiProVision, and open-sourced InternVL-Chat, underscore the significant challenges posed by MMT-Bench. We anticipate that MMT-Bench will inspire the community to develop next-generation multimodal foundation models aimed at achieving general-purpose multimodal intelligence.
+            The capability to process multiple images is crucial for Multimodal Large Language Models, as a single image captures information from a specific angle and moment, limiting the model's ability to understand and reason about the entire scene. Recent multi-image Multimodal Large Language Models (MLLMs) have begun to address this need. However, their evaluation has not kept pace with their development. To fill this gap, we introduce the Multimodal Multi-image Understanding (MMIU) benchmark, a comprehensive evaluation suite designed to assess MLLMs across a wide range of multi-image tasks. MMIU encompasses 7 types of multi-image relationships, 52 tasks, 77K images, and 11K meticulously curated multiple-choice questions, making it the most extensive benchmark of its kind. Our evaluation of 24 popular MLLMs, including both open-source and proprietary models, reveals significant challenges in multi-image comprehension, particularly in tasks involving spatial understanding. Even the most advanced models, such as GPT-4o, achieve only 55.7\% accuracy on MMIU. Through multi-faceted analytical experiments, we identify key performance gaps and limitations, providing valuable insights for future model and data improvements. We aim for MMIU to advance the frontier of LVLM research and development, moving us toward achieving sophisticated multimodal multi-image user interactions.
           </p>
         </div>
       </div>
@@ -263,8 +259,8 @@
 
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
-  <h1 class="title is-1 MMT-bench">
-    <span class="MMT-bench" style="vertical-align: middle">MMT-Bench</span>
+  <h1 class="title is-1 MMIU">
+    <span class="MMIU" style="vertical-align: middle">MMIU</span>
   </h1>
   </div>
 </section>
@@ -276,12 +272,10 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
-          <img src="static/images/task2.png" alt="pipeline" class="center">
+          <img src="static/images/MMeval_construct.png" alt="pipeline" class="center">
           <br>
           <p>
-            An illustration of our pipeline for data collection. First, given a task name, we retrieve its related datasets from the internet.
-            Then we collate them in a uniform data format - metadata. Finally, we generate questions with choices and answers from metadata using
-            manually designed rules or ChatGPT. Our benchmarks cover capabilities evaluation with diverse image types
+            An illustration of our data collection process. First, we refine multi-image tasks and collect task data based on cognitive psychology. Then, we standardize these datasets into a uniform format—metadata. Next, we generate multiple-choice samples with answerable and unanswerable questions from the metadata using either manually designed rules or GPT4o. Our benchmarks include capability evaluations across various image types.
           </p>
         </div>
     </div>
@@ -293,8 +287,7 @@
         <h2 class="title is-3">Comparisons with Existing Benchmarks</h2>
         <div class="content has-text-justified">
           <p>
-            MMT-Bench consists of massive samples and multimodal tasks compared with other benchmarks. I, T, V, and P respectively represent image, text, video, and point cloud. 
-            Compared with previous benchmarks, MMT-Bench covers an extensive range of multimodal reasoning capabilities with sufficient test samples from various modalities, which requires expert knowledge and deliberate visual recognition, localization, reasoning, and planning. Our MMT-Bench poses significant challenges for the current state-of-the-art LVLMs.
+            The comparison between MMIU and existing multi-image evaluation benchmarks including Video-MME, MIRB, MUIRBENCH, and MileBench. We summarize the image relationships in previous benchmarks according to seven categories defined in MMIU. `Y\&N' indicates that our MMIU comprises both answerable and unanswerable questions. I, T, V, D and P represent image, text, video, depth map and point cloud, respectively. Compared with prior datasets, MMIU involves massive test samples spanning $52$ multimodal tasks and $5$ modalities, and comprehensive multi-image analyses by image relationships, task map and supervised fine-tuning (SFT). 
         </p>
         <img src="static/images/compare.png" alt="comparison" class="center">
         </div>
@@ -325,8 +318,7 @@
         <div class="content">
           <div class="content has-text-justified">
             <p>
-              Quantitative results for <b>30</b> LVLMs across <b>32</b> meta-tasks are summarized, with <span style="text-decoration: overline;"><strong>R</strong></span> representing the average rank. Accuracy is the metric, and the Overall score is computed across all subtasks, excluding visual recognition (VR) as denoted by <strong>*</strong>. 
-              The maximum value of each meta-task is <b>bolded</b>. Meta-tasks are abbreviated for brevity, with full terms in the paper for reference.
+              Quantitative results for 24 MLLMs across 52 mtasks are summarized. Accuracy is the metric, and the Overall score is computed across all tasks.
             </p>
           </div>
 
