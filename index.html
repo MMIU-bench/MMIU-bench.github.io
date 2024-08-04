@@ -2056,6 +2056,37 @@
 
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Performance across Image Relationships</h2>
+        <div class="content has-text-justified">
+          <p>We find that models exhibit varying capabilities across different image relationships. More detailed visualizations can be found in the paper. 
+            In general, LVLMs excel at understanding semantic content in multi-image scenarios, perform moderately in temporal tasks, and obtain the worst performance in comprehending spatial relationships in multi-image contexts.
+          </p>
+          <p>
+            <b>1) Semantic Relationships</b>, models generally perform well on multi-image semantic tasks involving low-level relationships. However, they struggle with high-level tasks, for subjective tasks such as Causality Reasoning and Emotion Recognition, which require the identification and reasoning of implicit visual information, highlighting a gap between model performance and human visual cognition. As for objective tasks such retrieval tasks, most models fail to tackle them. 
+          </p>
+          <p>
+            <b>2) In temporal relationships</b>, models can handle discrete and continuous temporal relationships relatively well but show mediocre performance on reasoning-intensive multi-image tasks. For instance, in sorting tasks, GPT4o achieves only 28\% and 21.5\% accuracy in temporal ordering and visual ordering tasks, respectively.
+          </p>
+          <p>
+            <b>3) In spatial relationships</b>, we find that models struggle with understanding both 2D and 3D positional relations. This is consistent with the observation in the previous single-image evaluation benchmark \cite{ying2024mmt} where they find that LVLMs fall short in localization and detection tasks requiring spatial reasoning. The tasks involving spatial relationships in MMIU become more challenging because models need to gather spatial information in multiple images and to reason.
+            </p>
+        </div>
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+                <div class="content has-text-centered">
+                  <img src="static/images/meta.jpg" alt="Performance across Image Relationships" width="100%">
+                  <p>
+                    (a): The average performance comparison of 24 LVLMs on three main image relationships.
+                    (b): The average performance comparison of representative models such as GPT4o on seven specific image relationships. </p>
+                </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
         <h2 class="title is-3">Taskonomy Analysis</h2>
         <div class="content has-text-justified">
           <p>
