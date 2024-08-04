@@ -315,7 +315,7 @@
         <div class="content">
           <div class="content has-text-justified">
             <p>
-              Quantitative results for 24 MLLMs across 52 mtasks are summarized. Accuracy is the metric, and the Overall score is computed across all tasks.
+              Quantitative results for 24 LVLMs across 52 tasks are summarized. Accuracy is the metric, and the Overall score is computed across all tasks.  The maximum value of each task is bolded. Notice that although InternVL1.5-chat supports multiple image inputs, its training phase did not incorporate multi-image data. The full term of task abbreviation can be found in the paper.
             </p>
           </div>
 
@@ -324,138 +324,194 @@
             <span class="leaderboard-label" style="background-color: #f9f2f8;">Closed</span> -->
 
             <span class="leaderboard-label" style="background-color: rgba(255, 208, 80, 0.15);">Baseline</span>
-            <span class="leaderboard-label" style="background-color: rgba(249, 242, 248, 1);">Open-Source</span>
-            <span class="leaderboard-label" style="background-color: rgba(117, 209, 215, 0.1);">Proprietary</span>
+            <span class="leaderboard-label" style="background-color: rgba(249, 242, 248, 1);">Adequate Multi-Image SFT LVLMs</span>
+            <span class="leaderboard-label" style="background-color: rgb(109, 138, 213);">Multi-Image input LVLMs</span>
+            <span class="leaderboard-label" style="background-color: rgb(140, 237, 140);">Single-Image input LVLMs</span>
+            <span class="leaderboard-label" style="background-color: rgba(117, 209, 215, 0.1);">Closed-source LVLMs</span>
           </div>
 
           <table>
             <tr style="background-color: rgba(122, 122, 122, 0.15);">
                 <td class="js-sort-number" style="text-align: left;"><strong>Model</strong></td>
                 <td class="js-sort-number"><strong>Overall</strong></td>
-                <td class="js-sort-number" style="text-decoration: overline;"><strong>R</strong></td>
+                <td class="js-sort-number"><strong>CR</strong></td>
+                <td class="js-sort-number"><strong>ER</strong></td>
+                <td class="js-sort-number"><strong>FD</strong></td>
+                <td class="js-sort-number"><strong>FC</strong></td>
+                <td class="js-sort-number"><strong>SC</strong></td>
+                <td class="js-sort-number"><strong>VCor</strong></td>
+                <td class="js-sort-number"><strong>VQA</strong></td>
+                <td class="js-sort-number"><strong>VGR</strong></td>
+                <td class="js-sort-number"><strong>FR</strong></td>
+                <td class="js-sort-number"><strong>HR</strong></td>
+                <td class="js-sort-number"><strong>I2IR</strong></td>
+                <td class="js-sort-number"><strong>MIC</strong></td>
+                <td class="js-sort-number"><strong>PR</strong></td>
+                <td class="js-sort-number"><strong>S2IR</strong></td>
+                <td class="js-sort-number"><strong>STD</strong></td>
+                <td class="js-sort-number"><strong>STS</strong></td>
+                <td class="js-sort-number"><strong>T2IR</strong></td>
                 <td class="js-sort-number"><strong>VR</strong></td>
-                <td class="js-sort-number"><strong>Loc</strong></td>
-                <td class="js-sort-number"><strong>OCR</strong></td>
-                <td class="js-sort-number"><strong>Count</strong></td>
-                <td class="js-sort-number"><strong>HLN</strong></td>
-                <td class="js-sort-number"><strong>IR</strong></td>
-                <td class="js-sort-number"><strong>3D</strong></td>
-                <td class="js-sort-number"><strong>VC</strong></td>
-                <td class="js-sort-number"><strong>VG</strong></td>
-                <td class="js-sort-number"><strong>DU</strong></td>
-                <td class="js-sort-number"><strong>AR</strong></td>
-                <td class="js-sort-number"><strong>PLP</strong></td>
-                <td class="js-sort-number"><strong>I2IT</strong></td>
-                <td class="js-sort-number"><strong>RR</strong></td>
-                <td class="js-sort-number"><strong>IQT</strong></td>
-                <td class="js-sort-number"><strong>Emo</strong></td>
+                <td class="js-sort-number"><strong>AQA</strong></td>
+                <td class="js-sort-number"><strong>GAR</strong></td>
+                <td class="js-sort-number"><strong>MVU</strong></td>
+                <td class="js-sort-number"><strong>MEV</strong></td>
+                <td class="js-sort-number"><strong>NIP</strong></td>
+                <td class="js-sort-number"><strong>TL</strong></td>
+                <td class="js-sort-number"><strong>TO</strong></td>
+                <td class="js-sort-number"><strong>VidCap</strong></td>
             </tr>
             <tr style="background-color: rgba(122, 122, 122, 0.15);">
-                <td></td>
-                <td class="js-sort-number"><strong>Overall*</strong></td>
-                <td class="js-sort-number" style="text-decoration: overline;"><strong>R*</strong></td>
-                <td class="js-sort-number"><strong>VI</strong></td>
-                <td class="js-sort-number"><strong>MemU</strong></td>
-                <td class="js-sort-number"><strong>VPU</strong></td>
-                <td class="js-sort-number"><strong>AND</strong></td>
-                <td class="js-sort-number"><strong>KD</strong></td>
-                <td class="js-sort-number"><strong>VCR</strong></td>
-                <td class="js-sort-number"><strong>IEJ</strong></td>
-                <td class="js-sort-number"><strong>MIA</strong></td>
-                <td class="js-sort-number"><strong>CIM</strong></td>
-                <td class="js-sort-number"><strong>TU</strong></td>
-                <td class="js-sort-number"><strong>VP</strong></td>
-                <td class="js-sort-number"><strong>MedU</strong></td>
-                <td class="js-sort-number"><strong>AUD</strong></td>
-                <td class="js-sort-number"><strong>DKR</strong></td>
-                <td class="js-sort-number"><strong>EA</strong></td>
-                <td class="js-sort-number"><strong>GN</strong></td>
+              <td></td>
+              <td></td>
+              <td class="js-sort-number"><strong>GuAR</strong></td>
+              <td class="js-sort-number"><strong>GNAP</strong></td>
+              <td class="js-sort-number"><strong>TC</strong></td>
+              <td class="js-sort-number"><strong>VClz</strong></td>
+              <td class="js-sort-number"><strong>VCo</strong></td>
+              <td class="js-sort-number"><strong>VO</strong></td>
+              <td class="js-sort-number"><strong>EVQA</strong></td>
+              <td class="js-sort-number"><strong>HE</strong></td>
+              <td class="js-sort-number"><strong>IQASC</strong></td>
+              <td class="js-sort-number"><strong>ICSC</strong></td>
+              <td class="js-sort-number"><strong>ISTE</strong></td>
+              <td class="js-sort-number"><strong>ITRSC</strong></td>
+              <td class="js-sort-number"><strong>MAR</strong></td>
+              <td class="js-sort-number"><strong>MR</strong></td>
+              <td class="js-sort-number"><strong>JPS</strong></td>
+              <td class="js-sort-number"><strong>3DE</strong></td>
+              <td class="js-sort-number"><strong>3DOD</strong></td>
+              <td class="js-sort-number"><strong>3DOT</strong></td>
+              <td class="js-sort-number"><strong>3DPE</strong></td>
+              <td class="js-sort-number"><strong>3DSR</strong></td>
+              <td class="js-sort-number"><strong>3DQA</strong></td>
+              <td class="js-sort-number"><strong>PT</strong></td>
+              <td class="js-sort-number"><strong>RPM</strong></td>
+              <td class="js-sort-number"><strong>SOT</strong></td>
+              <td class="js-sort-number"><strong>3DCR</strong></td>
+              <td class="js-sort-number"><strong>3DIR</strong></td>
             </tr>
             <tr style="background-color: rgba(255, 208, 80, 0.15);">
-                <td style="text-align: left;"><strong>Frequency Guess</strong></td>
-                <td>31.7</td>
-                <td>26.1</td>
+                <td style="text-align: left;"><strong>Frequency</strong></td>
+                <td>31.5</td>
+                <td>32.0</td>
+                <td>27.7</td>
+                <td>27.3</td>
                 <td>30.0</td>
-                <td>28.2</td>
-                <td>30.4</td>
-                <td>28.2</td>
-                <td>43.4</td>
-                <td>29.9</td>
-                <td>26.5</td>
-                <td>28.2</td>
-                <td>29.1</td>
-                <td>37.6</td>
-                <td>30.0</td>
-                <td>29.4</td>
-                <td>30.8</td>
-                <td>33.5</td>
-                <td>18.0</td>
-                <td>30.1</td>
-            </tr>
-            <tr style="background-color: rgba(255, 208, 80, 0.15);">
-                <td></td>
-                <td>32.2</td>
-                <td>25.9</td>
-                <td>52.1</td>
-                <td>32.8</td>
-                <td>29.3</td>
-                <td>44.4</td>
-                <td>33.7</td>
-                <td>27.0</td>
-                <td>30.0</td>
-                <td>46.5</td>
-                <td>28.5</td>
-                <td>29.1</td>
-                <td>29.5</td>
-                <td>30.9</td>
-                <td>29.7</td>
-                <td>29.4</td>
-                <td>28.0</td>
+                <td>30.2</td>
+                <td>29.6</td>
+                <td>49.0</td>
+                <td>76.5</td>
                 <td>29.0</td>
-            </tr>
-            <tr style="background-color: rgba(255, 208, 80, 0.15);">
-                <td style="text-align: left;"><strong>Random Guess</strong></td>
-                <td>28.5</td>
-                <td>30.0</td>
-                <td>27.1</td>
-                <td>28.1</td>
-                <td>27.2</td>
-                <td>25.0</td>
-                <td>41.6</td>
-                <td>24.3</td>
-                <td>25.5</td>
-                <td>25.0</td>
-                <td>24.8</td>
-                <td>30.3</td>
-                <td>25.4</td>
-                <td>26.6</td>
-                <td>21.2</td>
-                <td>33.4</td>
-                <td>10.5</td>
-                <td>25.4</td>
-            </tr>
-            <tr style="background-color: rgba(255, 208, 80, 0.15);">
-                <td></td>
-                <td>28.9</td>
-                <td>29.9</td>
-                <td>50.8</td>
-                <td>25.5</td>
-                <td>31.4</td>
-                <td>36.5</td>
-                <td>32.2</td>
                 <td>28.0</td>
-                <td>25.0</td>
-                <td>48.5</td>
-                <td>26.8</td>
-                <td>27.0</td>
-                <td>28.8</td>
-                <td>27.8</td>
-                <td>26.8</td>
-                <td>25.4</td>
                 <td>27.5</td>
-                <td>24.4</td>
+                <td>29.0</td>
+                <td>30.0</td>
+                <td>37.0</td>
+                <td>51.5</td>
+                <td>50.0</td>
+                <td>26.5</td>
+                <td>31.0</td>
+                <td>32.0</td>
+                <td>30.0</td>
+                <td>29.0</td>
+                <td>30.0</td>
+                <td>28.5</td>
+                <td>30.1</td>
+                <td>29.0</td>
+                <td>27.5</td>
             </tr>
-            <tr style="background-color: rgba(249, 242, 248, 1);">
+            <tr style="background-color: rgba(255, 208, 80, 0.15);">
+              <td></td>
+              <td></td>
+              <td>31.5</td>
+              <td>28.0</td>
+              <td>28.5</td>
+              <td>27.5</td>
+              <td>30.5</td>
+              <td>31.0</td>
+              <td>27.5</td>
+              <td>27.5</td>
+              <td>41.5</td>
+              <td>27.5</td>
+              <td>30.0</td>
+              <td>18.0</td>
+              <td>27.6</td>
+              <td>55.6</td>
+              <td>29.0</td>
+              <td>26.5</td>
+              <td>29.0</td>
+              <td>28.0</td>
+              <td>26.5</td>
+              <td>28.5</td>
+              <td>29.5</td>
+              <td>30.5</td>
+              <td>18.0</td>
+              <td>28.0</td>
+              <td>26.0</td>
+              <td>27.0</td>
+            </tr>
+            <tr style="background-color: rgba(255, 208, 80, 0.15);">
+                <td style="text-align: left;"><strong>Random</strong></td>
+                <td>27.4</td>
+                <td>19.0</td>
+                <td>23.0</td>
+                <td>22.3</td>
+                <td>26.4</td>
+                <td>24.7</td>
+                <td>29.1</td>
+                <td>45.0</td>
+                <td>50.0</td>
+                <td>23.0</td>
+                <td>26.0</td>
+                <td>24.0</td>
+                <td>20.0</td>
+                <td>24.5</td>
+                <td>37.5</td>
+                <td>51.0</td>
+                <td>55.0</td>
+                <td>27.5</td>
+                <td>28.0</td>
+                <td>28.0</td>
+                <td>26.5</td>
+                <td>24.0</td>
+                <td>27.5</td>
+                <td>23.0</td>
+                <td>26.9</td>
+                <td>24.5</td>
+                <td>23.0</td>
+            </tr>
+            <tr style="background-color: rgba(255, 208, 80, 0.15);">
+              <td></td>
+              <td></td>
+              <td>21.0</td>
+              <td>12.5</td>
+              <td>24.0</td>
+              <td>27.5</td>
+              <td>20.5</td>
+              <td>27.0</td>
+              <td>32.0</td>
+              <td>31.5</td>
+              <td>38.5</td>
+              <td>27.0</td>
+              <td>26.0</td>
+              <td>14.0</td>
+              <td>24.6</td>
+              <td>50.4</td>
+              <td>23.5</td>
+              <td>25.5</td>
+              <td>24.5</td>
+              <td>22.5</td>
+              <td>31.0</td>
+              <td>23.5</td>
+              <td>24.5</td>
+              <td>25.5</td>
+              <td>10.5</td>
+              <td>22.5</td>
+              <td>27.0</td>
+              <td>27.0</td>
+            </tr>
+            <!-- <tr style="background-color: rgba(249, 242, 248, 1);">
                 <td style="text-align: left;">
                   <a href="https://github.com/OpenGVLab/InternVL/">
                     <b>InternVL-Chat-v1.2-34B</b>
@@ -1833,7 +1889,7 @@
                 <td>29.6</td>
                 <td>37.5</td>
                 <td>21.1</td>
-            </tr>
+            </tr> -->
         </table>  
         </div>
       </div>
